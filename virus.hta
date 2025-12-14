@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Errore</title>
+<hta:application
+    applicationname="Windows    Error"
+    border="thin"
+    caption="ok"
+    showintaskbar="no"
+    sysmenu="yes"
+    scroll="no"
+/>
+
+<script language="VBScript">
+Dim w, h, x, y
+Randomize
+
+w = 420
+h = 180
+
+Do
+    x = Int((screen.width - w) * Rnd)
+    y = Int((screen.height - h) * Rnd)
+
+    window.resizeTo w, h
+    window.moveTo x, y
+
+    document.body.innerHTML = _
+        "<div style='font-family:Segoe UI; font-size:14px;'>" & _
+        "<b>Program error</b><br><br>" & _
+        "There is a problem with windows.<br>" & _
+        "Please contact support.</div>"
+
+    window.focus
+    WScript.Sleep 1
+Loop
+</script>
+</head>
+
+<body style="background:#f0f0f0; padding:15px;">
+</body>
+</html>
